@@ -1,6 +1,9 @@
 <div class="album text-muted">
   <div class="container">
     <div class="row">
+      <div class="card" style="height: 140px; line-height: 140px;">
+        <a [routerLink]="['/space']"> click me!! </a>
+      </div>
       <div class="card" *ngFor="let post of posts$ | async">
         <a [routerLink]="['/home', post.id]">
           <img
@@ -10,9 +13,6 @@
           />
           <p class="card-text">{{ post.name }}</p>
         </a>
-      </div>
-      <div class="card" style="height: 140px; line-height: 140px;">
-        <a [routerLink]="['/space']"> click me!! </a>
       </div>
     </div>
   </div>

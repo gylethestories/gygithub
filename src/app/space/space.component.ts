@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import {
@@ -17,11 +18,13 @@ import { CssSelector } from '@angular/compiler';
 })
 export class SpaceComponent implements OnInit, AfterViewInit {
   isOpen = false;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
   ngAfterViewInit() {}
 
-  onClick() {}
+  onClick() {
+    this.router.navigate(['/home']);
+  }
 }
