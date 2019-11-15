@@ -1,0 +1,18 @@
+<div class="pagination-outer">
+  <div [ngClass]="placementClassName" class="ul-outer">
+    <ul>
+      <li *ngIf="current > 1" (click)="onChangePage(current - 1)" class="pagination-item no-bg cursor-pointer">
+        <img class="prev-page" src="../../../../assets/images/next-page.svg"/>
+      </li>
+      <li *ngIf="current <= 1" class="pagination-item no-bg"></li>
+      <li (click)="onChangePage(item.value, item.tag)" [ngClass]="{'active-item': item.value === current, 'cursor-pointer real-item': item.tag === 'normal', 'no-bg' : item.tag === 'ellipse'}" *ngFor="let item of showItems; let i = index;" class="pagination-item">
+        {{item.value}}
+        <div *ngIf="item.value === current" class="active-indicator"></div>
+      </li>
+      <li *ngIf="current < total" (click)="onChangePage(current + 1)" class="pagination-item no-bg cursor-pointer">
+        <img src="../../../../assets/images/next-page.svg"/>
+      </li>
+      <li *ngIf="current >= total" class="pagination-item no-bg"></li>
+    </ul>
+  </div>
+</div>

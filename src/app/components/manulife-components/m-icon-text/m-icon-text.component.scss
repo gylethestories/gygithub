@@ -1,0 +1,31 @@
+@import '../../../../styles/color.scss';
+.icon-text-box {
+  width: 325px;
+  height: 110px;
+  padding: 30px 28.8px 30px 35px;
+  border: solid 1px $font-gray-clr;
+  background-color: $bg-active-color;
+  img,
+  span {
+    float: left;
+  }
+  img {
+    float: left;
+    width: 43px;
+    height: 50px;
+    object-fit: contain;
+  }
+  span {
+    float: right;
+    width: 196.2px;
+    height: 52px;
+    font-family: ManulifeJHSans;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    color: $font-link-clr;
+  }
+}

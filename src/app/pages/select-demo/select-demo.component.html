@@ -1,0 +1,63 @@
+<div class="demo-page">
+  <h1>Select</h1>
+  <tabset>
+    <tab heading="Overview" id="overview">
+      <div class="demo">
+        <p class="content">&lt;m-select&gt; 提供了基于 manulife design style 的下拉框一样的功能。
+        </p>
+        <m-select (onSelectChange)="onSelectChange($event)" [options]="options"></m-select>
+      </div>
+    </tab>
+    <tab heading="API" id="id">
+      <app-md-table>
+        <div [innerHTML]="apiTable"></div>
+      </app-md-table>
+    </tab>
+    <tab heading="Examples" id="examples">
+      <div class="code-part">
+        <tabset>
+          <tab heading="template" id="template">
+            <pre class="prettyprint">
+              <ol>
+                <li><span class="ltag">&lt;m-select</span></li>
+                <li><span class="lvar">  (onSelectChange)</span>=<span class="lsyb">"onSelectChange($event)"</span></li>
+                <li><span class="lvar">  [options]</span>=<span class="lsyb">"options"</span></li>
+                <li><span class="ltag">&lt;/m-select&gt;</span></li>
+              </ol>
+            </pre>
+          </tab>
+          <tab heading="component" id="component">
+            <pre class="prettyprint">
+              <ol>
+                <li><span class="lsyb">import</span><span> {{'{'}} </span><span class="lvar">Component</span><span> {{'}'}} </span><span class="lsyb">from </span><span class="lstr">'@angular/core'</span></li>
+                <li></li>
+                <li><span class="lfuc">@Component</span><span>{{'({'}} </span></li>
+                <li><span>  selector: </span><span class="lstr">'demo-select'</span>,</li>
+                <li><span>  templateUrl: </span><span class="lstr">'./select.html'</span>,</li>
+                <li><span>{{'})'}} </span></li>
+                <li></li>
+                <li><span class="lsyb">export class DemoSelectComponent</span><span> {{'{'}} </span></li>
+                <li></li>
+                <li><span class="lvar">  options</span> = <span>{{ '[' }} </span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option1'</span>, value: <span class="lstr">'option1'</span>{{ '}' }},</span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option2'</span>, value: <span class="lstr">'option2'</span>{{ '}' }},</span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option3'</span>, value: <span class="lstr">'option3'</span>{{ '}' }},</span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option4'</span>, value: <span class="lstr">'option4'</span>{{ '}' }},</span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option5'</span>, value: <span class="lstr">'option5'</span>{{ '}' }},</span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option6'</span>, value: <span class="lstr">'option6'</span>{{ '}' }},</span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option7'</span>, value: <span class="lstr">'option7'</span>{{ '}' }},</span></li>
+                <li><span class="lsyb">    {{ '{' }}key: <span class="lstr">'option8'</span>, value: <span class="lstr">'option8'</span>{{ '}' }},</span></li>
+                <li><span>  {{ ']' }}</span></li>
+                <li></li>
+                <li><span class="lfuc">  onSelectChange</span>( <span class="lvar">option</span>: <span class="lsyb">any</span> )<span> {{'{'}} </span></li>
+                <li><span class="lsyb">    console.log</span>(<span class="lvar">option</span>)</li>
+                <li><span>  {{'}'}} </span></li>
+                <li><span>{{'}'}} </span></li>
+              </ol>
+            </pre>
+          </tab>
+        </tabset>
+      </div>
+    </tab>
+  </tabset>
+</div>

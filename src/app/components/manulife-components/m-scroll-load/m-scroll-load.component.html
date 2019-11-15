@@ -1,0 +1,6 @@
+<div class="content" style="height: 100%;overflow: auto;" (scroll)="scrollBottom($event)">
+    <div class="list" *ngFor="let item of listData">{{item}}</div>
+    <div *ngIf="isBottom">加载中...</div>
+    <div *ngIf="noMore">没有更多数据了</div>
+    <div *ngIf="loadingFailed">数据加载失败,请重试</div>
+</div>

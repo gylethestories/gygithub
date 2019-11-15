@@ -1,0 +1,81 @@
+@import "../../../../styles/color.scss";
+
+.form-row {
+  display: flex;
+
+  .form-col {
+    .manulife-radio-container {
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      width: 100%;
+
+      .manulife-radio-label {
+        margin: auto 35px auto 10px;
+        color: $font-normal-clr;
+        font-family: "ManulifeJHSans";
+        font-size: 16px;
+      }
+
+      .manulife-radio-type {
+        height: auto;
+        position: relative;
+      }
+
+      .manulife-radio-type:before {
+        content: "";
+        width: 26px;
+        height: 26px;
+        border: 2px solid $border-light-clr;
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+      .manulife-radio-type-checked:before {
+        content: "";
+        width: 26px;
+        height: 26px;
+        border: 2px solid #00a758;
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+      .manulife-radio-type-checked:after {
+        content: "";
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        background: #00a758;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -9px;
+        margin-top: -9px;
+      }
+    }
+
+    .abc-radio {
+      .form-check-input {
+        margin-right: 10px;
+      }
+
+      .form-check-label {
+        color: #606266;
+        font-weight: 500;
+        line-height: 1;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        white-space: nowrap;
+        outline: none;
+        font-size: 14px;
+        margin-right: 30px;
+      }
+    }
+  }
+}

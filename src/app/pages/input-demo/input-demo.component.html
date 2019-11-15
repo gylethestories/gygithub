@@ -1,0 +1,92 @@
+<h2>Demo</h2>
+<p [title]="'slogan' | translate">
+  {{ 'slogan' | translate }}
+</p>
+<m-input
+  [isSolidBorder]="isSolidBorder"
+  (valChange)="onChange($event)"
+  [initValue]="'123456'"
+  [inputStyle]="inputStyle"
+></m-input>
+<div>
+  <m-input
+    [isSolidBorder]="isSolidBorder1"
+    (valChange)="onChange($event)"
+    [initValue]="'78945'"
+    [inputStyle]="inputStyle"
+  ></m-input>
+</div>
+<h2>Attribute</h2>
+<app-attribute-table
+  style="margin-top: 40px;"
+  [headers]="headers"
+  [contents]="contents"
+></app-attribute-table>
+<h2>Code</h2>
+<app-code-part>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div>
+      <span style="color: #5ccfe6;">&lt;</span
+      ><span style="color: #5ccfe6;">m-input</span>
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">[isSolidBorder]</span>=<span
+        style="color: #bae67e;"
+        >"isSolidBorder"</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">(valChange)</span>=<span
+        style="color: #bae67e;"
+        >"onChange($event)"</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">[initValue]</span>=<span
+        style="color: #bae67e;"
+        >"'123456'"</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">[inputStyle]</span>=<span
+        style="color: #bae67e;"
+        >"inputStyle"</span
+      >
+    </div>
+    <div>
+      <span style="color: #5ccfe6;">&gt;&lt;/</span
+      ><span style="color: #5ccfe6;">m-input</span
+      ><span style="color: #5ccfe6;">&gt;</span>
+    </div>
+  </div>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div style="line-height: 22px;">
+      <div>
+        inputStyle&nbsp;<span style="color: #f29e74;">=</span>&nbsp;{{ '{' }}
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;<span style="color: #bae67e;"
+          >'#dc5a44'</span
+        >,
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #bae67e;">'font-size'</span
+        >:&nbsp;<span style="color: #bae67e;">'24px'</span>,
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #bae67e;"
+          >'font-weight'</span
+        >:&nbsp;<span style="color: #bae67e;">'bold'</span>,
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #bae67e;">'max-width'</span
+        >:&nbsp;<span style="color: #bae67e;">'200px'</span>
+      </div>
+      <div>&nbsp;&nbsp;};</div>
+    </div>
+  </div>
+</app-code-part>

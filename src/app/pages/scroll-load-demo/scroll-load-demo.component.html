@@ -1,0 +1,63 @@
+<h2>Demo</h2>
+<div style="height:100px;background-color: cornflowerblue;">
+  <app-m-scroll-load
+    [Option]="option"
+    (dataMore)="getData($event)"
+  ></app-m-scroll-load>
+</div>
+<h2>Attribute</h2>
+<app-attribute-table
+  style="margin-top: 40px;"
+  [headers]="headers"
+  [contents]="contents"
+></app-attribute-table>
+<h2>Code</h2>
+<app-code-part>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div>
+      <span style="color: #5ccfe6;">&lt;</span
+      ><span style="color: #5ccfe6;">app-m-scroll-load</span>
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">[Option]</span>=<span
+        style="color: #bae67e;"
+        >"option"</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">(dataMore)</span>=<span
+        style="color: #bae67e;"
+        >"getData($event)"</span
+      >
+    </div>
+    <div>
+      <span style="color: #5ccfe6;">&gt;&lt;/</span
+      ><span style="color: #5ccfe6;">app-m-scroll-load</span
+      ><span style="color: #5ccfe6;">&gt;</span>
+    </div>
+  </div>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div style="line-height: 22px;">
+      <div>
+        option&nbsp;<span style="color: #f29e74;">=</span>&nbsp;{{ "{" }}
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #bae67e;">'pageNum'</span
+        >:&nbsp;<span style="color: #bae67e;">'0'</span>,
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #bae67e;">'pageSize'</span
+        >:&nbsp;<span style="color: #bae67e;">'10'</span>,
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #bae67e;">'data'</span
+        >:&nbsp;<span style="color: #bae67e;">'[2,3,1,4,5,3,5,3,5,3,5]'</span>
+      </div>
+      <div>&nbsp;&nbsp;};</div>
+    </div>
+  </div>
+</app-code-part>

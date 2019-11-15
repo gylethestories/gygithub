@@ -1,0 +1,227 @@
+<h2>Demo</h2>
+<p>{{ 'slogan' | translate }}</p>
+<p>{{ 'header.title' | translate }}</p>
+<p>{{ 'header.content.txt' | translate }}</p>
+<div>
+  <span class="lang-option" [ngStyle]="{ color: !switch ? activeBg : txtColor }"
+    >en</span
+  >
+  <div
+    class="m-switch"
+    [ngStyle]="{ 'background-color': switch ? activeBg : bg }"
+    (click)="onSwitch()"
+  >
+    <span
+      class="m-switch-indicator"
+      [ngStyle]="{
+        left: switch ? '100%' : 0,
+        'margin-left': switch ? '-19px' : '1px'
+      }"
+    ></span>
+  </div>
+  <span class="lang-option" [ngStyle]="{ color: switch ? activeBg : txtColor }"
+    >中文</span
+  >
+</div>
+<h2>Code</h2>
+<app-code-part>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div>
+      <span style="color: #ffe6b3;">@</span
+      ><span style="color: #5ccfe6;">Pipe</span>({{ '{' }}&nbsp;name:&nbsp;<span
+        style="color: #bae67e;"
+        >'translate'</span
+      >,&nbsp;pure:&nbsp;<span style="color: #ffcc66;">false</span>&nbsp;})
+    </div>
+    <div>
+      <span style="color: #ffa759;">export</span>&nbsp;<span
+        style="color: #ffa759;"
+        >class</span
+      >&nbsp;<span style="color: #73d0ff;">TranslatePipe</span>&nbsp;<span
+        style="color: #ffa759;"
+        >implements</span
+      >&nbsp;<span style="color: #5ccfe6;">PipeTransform</span>,&nbsp;<span
+        style="color: #5ccfe6;"
+        >OnDestroy</span
+      >&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;value&nbsp;<span style="color: #f29e74;">=</span>&nbsp;<span
+        style="color: #bae67e;"
+        >''</span
+      >;
+    </div>
+    <div>
+      &nbsp;&nbsp;onTranslationChange<span style="color: #f29e74;">:</span
+      >&nbsp;<span style="color: #73d0ff;">Subscription</span>;
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffa759;">constructor</span>(<span
+        style="color: #ffa759;"
+        >private</span
+      >&nbsp;<span style="color: #d4bfff;">langService</span
+      ><span style="color: #f29e74;">:</span>&nbsp;<span style="color: #73d0ff;"
+        >LangService</span
+      >)&nbsp;{{ '{' }}}
+    </div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">transform</span>(<span
+        style="color: #d4bfff;"
+        >key</span
+      ><span style="color: #f29e74;">:</span>&nbsp;<span style="color: #5ccfe6;"
+        >any</span
+      >)<span style="color: #f29e74;">:</span>&nbsp;<span
+        style="color: #5ccfe6;"
+        >string</span
+      >&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffa759;">if</span
+      >&nbsp;(<span style="color: #f29e74;">!</span
+      ><span style="color: #5ccfe6;font-style: italic;">this</span
+      ><span style="color: #f29e74;">.</span>onTranslationChange)&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5ccfe6;font-style: italic;"
+        >this</span
+      ><span style="color: #f29e74;">.</span>onTranslationChange&nbsp;<span
+        style="color: #f29e74;"
+        >=</span
+      >&nbsp;<span style="color: #5ccfe6;font-style: italic;">this</span
+      ><span style="color: #f29e74;">.</span>langService<span
+        style="color: #f29e74;"
+        >.</span
+      >langChange<span style="color: #f29e74;">.</span
+      ><span style="color: #ffd580;">subscribe</span>(()&nbsp;<span
+        style="color: #ffa759;"
+        >=&gt;</span
+      >&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5ccfe6;font-style: italic;"
+        >this</span
+      ><span style="color: #f29e74;">.</span>value&nbsp;<span
+        style="color: #f29e74;"
+        >=</span
+      >&nbsp;<span style="color: #5ccfe6;font-style: italic;">this</span
+      ><span style="color: #f29e74;">.</span>langService<span
+        style="color: #f29e74;"
+        >.</span
+      ><span style="color: #ffd580;">get</span>(key);
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffa759;">if</span
+      >&nbsp;(<span style="color: #5ccfe6;font-style: italic;">this</span
+      ><span style="color: #f29e74;">.</span>langService<span
+        style="color: #f29e74;"
+        >.</span
+      >langData)&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5ccfe6;font-style: italic;"
+        >this</span
+      ><span style="color: #f29e74;">.</span>value&nbsp;<span
+        style="color: #f29e74;"
+        >=</span
+      >&nbsp;<span style="color: #5ccfe6;font-style: italic;">this</span
+      ><span style="color: #f29e74;">.</span>langService<span
+        style="color: #f29e74;"
+        >.</span
+      ><span style="color: #ffd580;">get</span>(key);
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffa759;">return</span
+      >&nbsp;<span style="color: #5ccfe6;font-style: italic;">this</span
+      ><span style="color: #f29e74;">.</span>value;
+    </div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">ngOnDestroy</span>()&nbsp;{{
+        '{'
+      }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #5ccfe6;font-style: italic;"
+        >this</span
+      ><span style="color: #f29e74;">.</span
+      ><span style="color: #ffd580;">_destory</span>();
+    </div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>
+      &nbsp;&nbsp;<span style="color: #ffd580;">_destory</span>()&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffa759;">if</span
+      >&nbsp;(<span style="color: #f29e74;">typeof</span>&nbsp;<span
+        style="color: #5ccfe6;font-style: italic;"
+        >this</span
+      ><span style="color: #f29e74;">.</span>onTranslationChange&nbsp;<span
+        style="color: #f29e74;"
+        >!==</span
+      >&nbsp;<span style="color: #bae67e;">'undefined'</span>)&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5ccfe6;font-style: italic;"
+        >this</span
+      ><span style="color: #f29e74;">.</span>onTranslationChange<span
+        style="color: #f29e74;"
+        >.</span
+      ><span style="color: #ffd580;">unsubscribe</span>();
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5ccfe6;font-style: italic;"
+        >this</span
+      ><span style="color: #f29e74;">.</span>onTranslationChange&nbsp;<span
+        style="color: #f29e74;"
+        >=</span
+      >&nbsp;<span style="color: #ffcc66;">undefined</span>;
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>}</div>
+  </div>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div>
+      <span style="color: #5ccfe6;">&lt;</span
+      ><span style="color: #5ccfe6;">p</span
+      ><span style="color: #5ccfe6;">&gt;</span>{{ '{'
+      }}{{ '{' }}&nbsp;'slogan'&nbsp;|&nbsp;translate&nbsp; }}<span
+        style="color: #5ccfe6;"
+        >&lt;/</span
+      ><span style="color: #5ccfe6;">p</span
+      ><span style="color: #5ccfe6;">&gt;</span>
+    </div>
+    <div>
+      <span style="color: #5ccfe6;">&lt;</span
+      ><span style="color: #5ccfe6;">p</span
+      ><span style="color: #5ccfe6;">&gt;</span>{{ '{'
+      }}{{ '{' }}&nbsp;'header.title'&nbsp;|&nbsp;translate&nbsp; }}<span
+        style="color: #5ccfe6;"
+        >&lt;/</span
+      ><span style="color: #5ccfe6;">p</span
+      ><span style="color: #5ccfe6;">&gt;</span>
+    </div>
+    <div>
+      <span style="color: #5ccfe6;">&lt;</span
+      ><span style="color: #5ccfe6;">p</span
+      ><span style="color: #5ccfe6;">&gt;</span>{{ '{'
+      }}{{ '{' }}&nbsp;'header.content.txt'&nbsp;|&nbsp;translate&nbsp; }}<span
+        style="color: #5ccfe6;"
+        >&lt;/</span
+      ><span style="color: #5ccfe6;">p</span
+      ><span style="color: #5ccfe6;">&gt;</span>
+    </div>
+  </div>
+</app-code-part>

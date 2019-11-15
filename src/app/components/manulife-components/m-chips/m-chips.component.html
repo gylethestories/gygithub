@@ -1,0 +1,11 @@
+<div
+  [ngClass]="{
+    withStatus: !options.circle && options.status,
+    disabled: options.disabled,
+    selected: options.selected
+  }"
+  [class]="!options.circle || options.selected ? options.status : ''"
+>
+  <i *ngIf="options.circle" [class]="options.circle ? options.status : ''"></i>
+  <span class="Tag">{{ options.text }}</span>
+</div>

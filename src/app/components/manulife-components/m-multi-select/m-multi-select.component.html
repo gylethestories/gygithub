@@ -1,0 +1,29 @@
+<div class="m-select-container">
+  <div class="m-select-txt" (click)="onShowSelect($event)">
+    <span class="m-select-txt-item" *ngFor="let item of optionsSelected">
+      <span>{{ item.label }}</span>
+      <a class="cancel" (click)="cancel(item)">X</a>
+    </span>
+    <div
+      class="m-s-triangle"
+      [ngClass]="{ 'm-s-angledown': angleAnimation }"
+    ></div>
+  </div>
+  <div class="m-select-outer" [hidden]="!showSelect">
+    <ul class="m-select-options">
+      <li
+        class="m-select-option"
+        *ngFor="let option of options"
+        (click)="onSelect($event, option)"
+      >
+        <div class="active-bar"></div>
+        <span class="m-select-label">
+          {{ option.label }}
+        </span>
+        <span class="m-select-checkbox">
+          <input class="checkbox" type="checkbox" />
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.m-table{
+  .m-t-content{
+    text-align: left;
+    border-color: fray;
+    border-collapse: collapse;
+    td, th{
+      padding: 15px;
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 14px;
+    }
+  }
+  .m-t-header{
+    color: #666;
+  }
+}

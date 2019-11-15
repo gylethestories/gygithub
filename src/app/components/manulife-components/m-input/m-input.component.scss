@@ -1,0 +1,21 @@
+.m-input {
+  position: relative;
+  max-width: 200px;
+  box-sizing: border-box;
+  height: 34px;
+  display: inline-block;
+  background-position: 0 bottom;
+  background-repeat: repeat-x;
+  background-size: 6px 2px;
+  transition: width 0.3s;
+  input {
+    font-size: inherit;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    color: inherit;
+    font-weight: inherit;
+    background: none;
+  }
+}

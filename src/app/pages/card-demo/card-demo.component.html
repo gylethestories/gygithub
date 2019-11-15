@@ -1,0 +1,28 @@
+<div class="card-demo">
+  <h1>Card</h1>
+  <tabset>
+    <tab heading="Overview" id="overview">
+      <div class="demo">
+        <m-card [option]="option"></m-card>
+      </div>
+      <button (click)='changeStyle(0)'>common</button>
+      <button (click)='changeStyle(1)'>fullImg</button>
+      <button (click)='changeStyle(2)'>iconCard</button>
+      <button (click)='changeStyle(3)'>iconCardTwo</button>
+    </tab>
+    <tab heading="API" id="id">
+      <app-md-table>
+        <div [innerHTML]="apiTable"></div>
+      </app-md-table>
+    </tab>
+    <tab heading="Examples" id="examples">
+      <div class="code-part" style="color: #fff;">
+        <tabset>
+          <tab heading="template" id="template">
+            <div [innerHTML]="code"></div>
+          </tab>
+        </tabset>
+      </div>
+    </tab>
+  </tabset>
+</div>

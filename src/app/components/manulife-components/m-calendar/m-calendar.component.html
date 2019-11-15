@@ -1,0 +1,46 @@
+<div class="calendar-wrapper" [ngStyle]="{'display': display ? 'flex' : 'none'}">
+        <div class="calendar-header">
+            <div class="calendar-drop-down-wrapper">
+                <div class="drop-down" [ngClass]="{'drop-down-bottom-dash': selectedMonth || defaultMonth}">
+                    <input type="input" [ngClass]="{'drop-down-selected': selectedMonth || defaultMonth }"
+                        class="btn-select calendar-month-arrow-down-btn" (click)="monthDropDown()"
+                        placeholder="{{defaultMonth}}"
+                        [ngModel]="selectedMonth" readonly="true" />
+                    <button #calendarMonthBtn #calendarMonthArrowDownIcon
+                        class="arrow calendar-arrow-down calendar-month-arrow-down-btn calendar-arrow-down-deactive"
+                        (click)="monthDropDown()"></button>
+                </div>
+                <ul #calendarMonthUlWrapper class="calendar-ul-wrapper">
+                    <li *ngFor="let month of monthList; index as i" [ngClass]="{'item-active': month == defaultMonth}">
+                        <div for="month" (click)="selectMonth(month)">{{month}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="calendar-drop-down-wrapper">
+                <div class="drop-down" [ngClass]="{'drop-down-bottom-dash': selectedYear}">
+                    <input type="input" [ngClass]="{'drop-down-selected': selectedYear}"
+                        class="btn-select calendar-year-arrow-down-btn" (click)="yearDropDown()" [ngModel]="selectedYear"
+                        placeholder="{{selectedYear}}" readonly="true" />
+                    <button #calendarYearBtn #calendarYearArrowDownIcon
+                        class="arrow calendar-arrow-down calendar-year-arrow-down-btn calendar-arrow-down-deactive"
+                        (click)="yearDropDown()"></button>
+                </div>
+                <ul #calendarYearUlWrapper class="calendar-ul-wrapper">
+                    <li *ngFor="let year of yearList; index as i" [ngClass]="{'item-active': year == selectedYear}">
+                        <div for="year" (click)="selectYear(year)">{{year}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="calendar-label">
+            <div class="l" *ngFor="let label of CONST_LABEL; index as i">
+                {{label}}
+            </div>
+        </div>
+        <div class="calendar-days">
+            <div class="d" style="visibility: hidden;" *ngFor="let t of tag;">tag</div>
+            <div class="d" [ngClass]="{'d-active': day == selectedDay, 'd-sunday': checkSunday(day)}" (click)="selectDay(day)" *ngFor="let day of dayList; index as i">
+                {{day}}
+            </div>
+        </div>
+    </div>

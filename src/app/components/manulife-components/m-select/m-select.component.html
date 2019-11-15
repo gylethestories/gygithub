@@ -1,0 +1,13 @@
+<div class="manulife-drop-down-wrapper" [ngStyle]="{'width': width}">
+    <div class="drop-down" [ngClass]="{'drop-down-bottom-dash': selected}">
+        <div *ngIf="autoWidth" id="manulifeInputHidden" class="div-hidden">{{(selected ? selected : currentSelect.value)}}</div>
+        <input [ngClass]="{'drop-down-selected': selected}" class="btn-select manulife-arrow-down-btn" (click)="dropDown()" [value]="currentSelect.value" placeholder="{{ currentSelect.value }}" readonly="true"/>
+        <button #manulifeBtn #manulifeArrowDownIcon class="arrow arrow-down manulife-arrow-down-btn arrow-down-deactive"
+            (click)="dropDown()"></button>
+    </div>
+    <ul #manulifeUlWrapper class="manulife-ul-wrapper" [ngStyle]="{'width': width}">
+        <li *ngFor="let item of options; index as i" [ngClass]="{'item-active': item.value == selected}">
+            <div for="item"  (click)="onSelect($event, item)">{{item.value}}</div>
+        </li>
+    </ul>
+</div>

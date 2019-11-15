@@ -1,0 +1,32 @@
+.m-carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.m-carousel-container .m-carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.m-carousel-container .m-carousel-item .m-carousel-item {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+.m-carousel-container .carousel-indicator-container {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+.m-carousel-container .carousel-indicator-container .carousel-indicator-item {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-color: transparent;
+  display: inline-block;
+  margin-right: 5px;
+}

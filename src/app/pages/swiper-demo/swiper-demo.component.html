@@ -1,0 +1,65 @@
+<div class="demo-page">
+  <h1>Carousel</h1>
+  <tabset>
+    <tab heading="Overview" id="overview">
+      <div class="demo">
+        <p class="content">
+          使用时请在index.html或者style.css中应引用样式文件
+          app/shared/plugins/carousel/carousel.css
+        </p>
+        <div id="m-carousel">
+          <div class="m-carousel-outer">
+            <div class="m-carousel-item">
+              <!--保持carousel-outer,carousel-item的结构不变, carousel-item内部内容用户可以自定义-->
+              <img
+                src="../../../assets/images/carbon1.png"
+                style="width: 100%;height:100%;"
+                alt=""
+              />
+            </div>
+            <div class="m-carousel-item">
+              <!--保持carousel-outer,carousel-item的结构不变, carousel-item内部内容用户可以自定义-->
+              <img
+                src="../../../assets/images/carbon2.png"
+                style="width: 100%;height:100%;"
+                alt=""
+              />
+            </div>
+            <div class="m-carousel-item">
+              <!--保持carousel-outer,carousel-item的结构不变, carousel-item内部内容用户可以自定义-->
+              <img
+                src="../../../assets/images/carbon3.png"
+                style="width: 100%;height:100%;"
+                alt=""
+              />
+            </div>
+            <div class="m-carousel-item">
+              <!--保持carousel-outer,carousel-item的结构不变, carousel-item内部内容用户可以自定义-->
+              <div class="custom-carousel">
+                this is custom carousel
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </tab>
+    <tab heading="API" id="id">
+      <app-md-table>
+        <div [innerHTML]="apiTable"></div>
+      </app-md-table>
+    </tab>
+    <tab heading="Examples" id="examples">
+      <div class="code-part" style="color: #fff;">
+        <tabset>
+          <tab heading="template" id="template">
+            <div [innerHTML]="template"></div>
+          </tab>
+          <tab heading="component" id="component">
+            <div [innerHTML]="component"></div>
+          </tab>
+        </tabset>
+      </div>
+    </tab>
+  </tabset>
+</div>
+

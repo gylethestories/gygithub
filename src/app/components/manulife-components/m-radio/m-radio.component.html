@@ -1,0 +1,9 @@
+<div *ngIf="list" class="form-row">
+  <div class="form-col" *ngFor="let item of list">
+    <div class="manulife-radio-container">
+      <div class="manulife-radio-type" [ngClass]="{'manulife-radio-type-checked': item.id == selected }" (click)="changeSelected(item)">
+      </div>
+      <div class="manulife-radio-label">{{ item.name }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+@import "../../../styles/color.scss";
+
+.nav-list {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 240px;
+  overflow: hidden;
+}
+
+.menu-wrapper {
+  height: 100%;
+  padding-left: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  color: #ffffff;
+  position: relative;
+  background: $bg-dark-color;
+
+  .manulife-icon {
+    background-color: $bg-green-color !important;
+    height: 120px;
+    line-height: 120px;
+    font-family: "ManulifeJHSans-Regular";
+    font-size: 26px;
+    padding: 0;
+  }
+
+  div {
+    border: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 15px 0;
+    text-align: center;
+    &:active {
+      border: none;
+    }
+    &:hover {
+      background-color: #282b3e;
+    }
+  }
+  .active-menu {
+    background-color: #282b3e;
+  }
+
+  .nav-ul {
+    max-height: 0;
+    padding-left: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    color: #ffffff;
+    position: relative;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-right: 1px solid #f0f0f0;
+      opacity: 0.5;
+    }
+    li {
+      border: none;
+      list-style: none;
+      cursor: pointer;
+      padding: 15px 0;
+      text-align: center;
+      &:active {
+        border: none;
+      }
+      &:hover {
+        background-color: #282b3e;
+        opacity: 0.5;
+      }
+    }
+    .active-menu {
+      background-color: #282b3e;
+    }
+    .active-li {
+      opacity: 0.5;
+    }
+  }
+
+  .active-nav-ul {
+    max-height: 50px;
+    transition: max-height 0.3s ease-in;
+  }
+
+  .deactive-nav-ul {
+    max-height: 0;
+    transition: max-height 0.3s ease-in;
+  }
+}

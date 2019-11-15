@@ -1,0 +1,218 @@
+@import "../../../../styles/color.scss";
+
+.top-container {
+  background-color: $bg-active-color;
+  padding: 0 !important;
+  .card-img-back {
+    height: 600px;
+    background-size: cover;
+    background-position: 50% 50%;
+    .news-content {
+      padding: 20px 20px 30px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+    }
+    .news-content-wrapper {
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-wrap: break-word;
+      display: flex;
+      height: 100%;
+      p {
+        font-size: 28px !important;
+        font-family: "45light_Frutiger" !important;
+        word-break: break-word;
+        line-height: 2;
+      }
+    }
+  }
+  .card-common {
+    a {
+      color: #4e801f;
+    }
+    .news-content-wrapper {
+      height: 202px;
+      p {
+        font-size: 18px !important;
+        font-family: "45light_Frutiger" !important;
+        word-break: break-word;
+        line-height: 1.42857143;
+      }
+    }
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #cdcdcd;
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .image-mask {
+    overflow: hidden;
+    height: 175px;
+    background-color: #e3e3e3;
+
+    img {
+      vertical-align: middle;
+      border: 0;
+    }
+    p {
+      color: #333333;
+    }
+  }
+
+  .news-content {
+    padding: 25px;
+    height: 300px;
+    position: relative;
+    border: 1px solid #e3e3e3;
+    border-top: none;
+
+    .news-content-wrapper {
+      // overflow: hidden;
+
+      a {
+        font-size: 18px !important;
+        font-family: "65bold_Frutiger" !important;
+        word-break: break-word;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .news-title {
+          margin: 0 0 25px;
+          font-size: 22px !important;
+          font-family: "45light_Frutiger" !important;
+        }
+      }
+    }
+
+    .hyper-link {
+      font-size: 20px;
+      display: block;
+      color: #4e801f;
+      position: absolute;
+      bottom: 30px;
+      font-weight: bold;
+    }
+  }
+}
+
+.icon_card_wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+  width: 176px;
+  margin: 40px;
+  .icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 13px;
+  }
+  .title {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #5e6073;
+  }
+  .description {
+    font-family: "ManulifeJHSans" !important;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    color: #202336;
+  }
+}
+.icon_card_wrap_two{
+  width: 325px;
+  height: 110px;
+  border: solid 1px #ededed;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 40px;
+  .icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-left: 30px;
+  }
+  p{
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    color: #282b3e;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+@media (max-width: 1919px) and (min-width: 1134px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1133px) and (min-width: 1024px) {
+  .hidden-cust-md {
+    display: none !important;
+  }
+
+  .visible-cust-md {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1133px) and (min-width: 768px) {
+  .hidden-sm {
+    display: none !important;
+  }
+
+  .visible-md {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .top-container {
+    margin: 0px 20px 10px 0px;
+    width: 84.4%;
+  }
+
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .top-container {
+    margin: 0px 20px 10px 0px;
+    width: 50%;
+  }
+}

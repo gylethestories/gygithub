@@ -1,11 +1,12 @@
+import { bff } from './environment.config';
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
   production: false,
-  api: 'https://www.behance.net/v2/',
-  token: 'tIn2oeG0xiiUVQ5WsUsg9wWHOD1gjFuD'
+  bff: bff.dev
 };
 
 /*

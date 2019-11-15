@@ -1,0 +1,64 @@
+<div class="top-container" *ngIf="option.commom">
+  <div class="card-common">
+    <div class="image-mask" style="width: auto;" *ngIf="option.src">
+      <img
+        *ngIf="option.src[0]"
+        [src]="option.src[0]"
+        alt=""
+        class="hidden-sm hidden-cust-md hidden-md hidden-lg"
+      />
+      <img
+        *ngIf="option.src[1]"
+        [src]="option.src[1]"
+        alt=""
+        class="hidden-xs visible-sm hidden-cust-md hidden-md"
+      />
+      <img
+        *ngIf="option.src[2]"
+        [src]="option.src[2]"
+        alt=""
+        class="hidden-xs hidden-sm visible-cust-md"
+      />
+    </div>
+    <div class="news-content">
+      <div class="news-content-wrapper" style="overflow-wrap: break-word;">
+        <a [href]="option.titleUrl" target="_blank" *ngIf="option.title">
+          <div class="news-title">{{ option.title }}</div>
+        </a>
+        <p dir="ltr" *ngIf="option.description">{{ option.description }}</p>
+      </div>
+      <a class="hyper-link" *ngIf="option.more">
+        {{ option.more }}
+      </a>
+    </div>
+  </div>
+</div>
+<div class="top-container" *ngIf="option.fullImg">
+  <div
+    class="card-img-back"
+    [ngStyle]="{ backgroundImage: 'url( ' + option.src[1] + ' )' }"
+  >
+    <div class="news-content">
+      <div class="news-content-wrapper" style="overflow-wrap: break-word;">
+        <a target="_blank" *ngIf="option.title">
+          <div class="news-title">{{ option.title }}</div>
+        </a>
+        <p dir="ltr" *ngIf="option.description">{{ option.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="option.iconCard" class="icon_card_wrap">
+  <img [src]="option.src[0]" alt="" class="icon" />
+  <div>
+    <p class="title">{{ option.title }}</p>
+    <p class="description">{{ option.description }}</p>
+  </div>
+</div>
+
+<div *ngIf="option.iconCardTwo" class="icon_card_wrap_two">
+  <img [src]="option.src[0]" alt="" class="icon" />
+  <div>
+    <p class="title">{{ option.title }}</p>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+@import '../../../../styles/color.scss';
+div {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 10px 20px;
+  border: solid 2px $font-gray-clr;
+  border-radius: 20px;
+  i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .Tag {
+    height: 20px;
+    font-family: ManulifeJHSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: $font-link-clr;
+  }
+}
+.Received {
+  background-color: #0000c1;
+}
+.Pending {
+  background-color: #06c7ba;
+}
+.Success {
+  background-color: $bg-green-color;
+}
+.Void {
+  background-color: $border-light-clr;
+}
+.Fail {
+  background-color: $border-red-clr;
+}
+
+.withStatus {
+  border: none;
+  .Tag {
+    color: #fff;
+  }
+}
+
+.disabled {
+  background-color: $font-gray-clr;
+  border: none;
+  i {
+    background-color: $border-light-clr;
+  }
+  .Tag {
+    color: $font-light-clr;
+  }
+}
+
+.selected {
+  border: none;
+  i,
+  .Tag {
+    color: #fff;
+  }
+  i {
+    background-color: #fff;
+  }
+}

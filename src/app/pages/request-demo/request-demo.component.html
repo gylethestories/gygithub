@@ -1,0 +1,102 @@
+<h2>Demo</h2>
+<div class="send-request" (click)="testRequest()">click to request</div>
+<div class="progress-indicator" [hidden]="!show"></div>
+<p [hidden]="!errorShow" style="color: #f00;">{{ errMessage }}</p>
+<ul>
+  <li *ngFor="let user of users">
+    <span class="title">name:</span> {{ user.name }}&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="title">emal: </span>{{ user.email }}
+  </li>
+</ul>
+<h2>Attribute</h2>
+<app-attribute-table
+  style="margin-top: 40px;"
+  [headers]="headers"
+  [contents]="contents"
+></app-attribute-table>
+<h2>Code</h2>
+<app-code-part>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div>
+      <span style="color: #ffa759;">interface</span>&nbsp;<span
+        style="color: #73d0ff;"
+        >HttpRequestOption</span
+      >&nbsp;{{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;url<span style="color: #f29e74;">:</span>&nbsp;<span
+        style="color: #5ccfe6;"
+        >string</span
+      >;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5c6773;font-style: italic;"
+        >//&nbsp;请求地址</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;type<span style="color: #f29e74;">?:</span>&nbsp;<span
+        style="color: #5ccfe6;"
+        >string</span
+      >;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5c6773;font-style: italic;"
+        >//&nbsp;请求类型</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;dataType<span style="color: #f29e74;">?:</span>&nbsp;<span
+        style="color: #5ccfe6;"
+        >string</span
+      >;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #5c6773;font-style: italic;"
+        >//&nbsp;请求数据类型</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;data<span style="color: #f29e74;">?:</span>&nbsp;<span
+        style="color: #5ccfe6;"
+        >any</span
+      >;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5c6773;font-style: italic;"
+        >//&nbsp;请求数据</span
+      >
+    </div>
+    <div>
+      &nbsp;&nbsp;header<span style="color: #f29e74;">?:</span>&nbsp;<span
+        style="color: #5ccfe6;"
+        >any</span
+      >;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+        style="color: #5c6773;font-style: italic;"
+        >//&nbsp;请求头数据</span
+      >
+    </div>
+    <div>}</div>
+  </div>
+  <div
+    style='color: rgb(203, 204, 198); background-color: rgb(35, 40, 52); font-family: Consolas, "Courier New", monospace; font-size: 16px; line-height: 22px; white-space: pre;'
+  >
+    <div>
+      <span style="color: #5ccfe6;font-style: italic;">this</span
+      ><span style="color: #f29e74;">.</span>http
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f29e74;">.</span
+      ><span style="color: #ffd580;">request</span>({{ '{' }}
+    </div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url:&nbsp;<span
+        style="color: #bae67e;"
+        >'https://jsonplaceholder.typicode.com/users'</span
+      >
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f29e74;">.</span
+      ><span style="color: #ffd580;">subscribe</span>(<span
+        style="color: #d4bfff;"
+        >res</span
+      >&nbsp;<span style="color: #ffa759;">=&gt;</span>&nbsp;{{ '{' }}
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+  </div>
+</app-code-part>

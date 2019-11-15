@@ -1,0 +1,14 @@
+<div class="m-table">
+  <table class="m-t-content">
+    <thead>
+      <tr class="m-t-header">
+        <th *ngFor="let header of headers">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tr of contents">
+        <td *ngFor="let td of tr">{{td}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

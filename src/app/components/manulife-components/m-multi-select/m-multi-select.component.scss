@@ -1,0 +1,124 @@
+@import "../../../../styles/color.scss";
+
+.m-select-container {
+  position: relative;
+  width: 200px;
+  .m-select-txt {
+    position: relative;
+    padding: 0 5px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 30px;
+    height: auto;
+    line-height: 30px;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $darkColor;
+    font-size: 14px;
+    // border: 1px solid $borderColor;
+    border-bottom: 2px dotted $darkColor;
+    cursor: pointer;
+    .m-select-txt-item {
+      padding: 2px 10px;
+      background: #000;
+      width: auto;
+      border-radius: 10px;
+      color: #fff;
+      float: left;
+      line-height: 25px;
+      margin-bottom: 5px;
+
+      .cancel {
+        font-size: 12px;
+        margin-left: 10px;
+        color: grey;
+      }
+    }
+
+    .m-select-txt-item:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+  .m-s-triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 8px;
+    margin-top: 4px;
+    right: 5px;
+    border-top: 8px solid #ccc;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    transition: transform 0.4s;
+    transform-origin: center 4px;
+  }
+  .m-s-angledown {
+    transform: rotateZ(180deg);
+  }
+  .m-select-outer {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    overflow: hidden;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  .m-select-options {
+    padding-left: 0;
+    display: block;
+    // width: 217px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .m-select-option {
+    cursor: pointer;
+    height: 60px;
+    line-height: 60px;
+    color: $darkColor;
+    font-size: 14px;
+    width: 100%;
+    // padding-left: 5px;
+    box-sizing: border-box;
+    border-top: 1px solid $borderColor;
+    border-left: 1px solid $borderColor;
+    position: relative;
+    &:hover {
+      background-color: $hoverBg;
+      // color: $activeColor;
+      .active-bar {
+        display: block;
+      }
+    }
+    .m-select-label {
+      position: absolute;
+      left: 10px;
+    }
+
+    .m-select-checkbox {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  // .m-select-option:hover {
+  .active-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 4px;
+    height: 100%;
+    background-color: #222;
+    float: left;
+  }
+  // }
+}

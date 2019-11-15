@@ -1,0 +1,25 @@
+.m-switch {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 1px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 5px;
+  cursor: pointer;
+  .m-switch-indicator {
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  .lang-option {
+    vertical-align: middle;
+  }
+}

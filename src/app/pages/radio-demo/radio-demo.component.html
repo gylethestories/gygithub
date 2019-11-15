@@ -1,0 +1,63 @@
+<div class="demo-page">
+  <h1>Radio</h1>
+  <tabset>
+    <tab heading="Overview" id="overview">
+      <div class="demo">
+        <p class="content">&lt;m-radio&gt; 提供了和 <span>&lt;input type="radio"&gt;</span> 一样的功能, 基于 manulife design style。
+        </p>
+        <m-radio [list]="sourceArr" [name]="selectedSource" [colNum]="12" [(selectModel)]="selectedSource"
+          (selectChange)="selectChange($event)"></m-radio>
+      </div>
+    </tab>
+    <tab heading="API" id="id">
+      <app-md-table>
+        <div [innerHTML]="apiTable"></div>
+      </app-md-table>
+    </tab>
+    <tab heading="Examples" id="examples">
+      <div class="code-part">
+        <tabset>
+          <tab heading="template" id="template">
+            <pre class="prettyprint">
+              <ol>
+                <li><span class="ltag">&lt;m-radio </span></li>
+                <li><span class="lvar">  [list]</span>=<span class="lsyb">'sourceArr'</span></li>
+                <li><span class="lvar">  [colNum]</span>=<span class="lsyb">'12'</span></li>
+                <li><span class="lvar">  [(selectModel)]</span>=<span class="lsyb">'selectedSource'</span></li>
+                <li><span class="lvar">  [colNum]</span>=<span class="lsyb">'12'</span></li>
+                <li><span class="lvar">  [(selectModel)]</span>=<span class="lsyb">'selectedSource'</span></li>
+                <li><span class="lvar">  (selectChange)</span>=<span class="lsyb">'selectChange($event)'&gt;</span></li>
+                <li><span class="ltag">&lt;/m-radio&gt;</span></li>
+              </ol>
+            </pre>
+          </tab>
+          <tab heading="component" id="component">
+            <pre class="prettyprint">
+                <ol>
+                  <li><span class="lsyb">import</span><span> {{'{'}} </span><span class="lvar">Component</span><span> {{'}'}} </span><span class="lsyb">from </span><span class="lstr">'@angular/core'</span></li>
+                  <li></li>
+                  <li><span class="lfuc">@Component</span><span>{{'({'}} </span></li>
+                  <li><span>  selector: </span><span class="lstr">'demo-radio'</span>,</li>
+                  <li><span>  templateUrl: </span><span class="lstr">'./radio.html'</span>,</li>
+                  <li><span>{{'})'}} </span></li>
+                  <li></li>
+                  <li><span class="lsyb">export class DemoRadioComponent</span><span> {{'{'}} </span></li>
+                  <li></li>
+                  <li><span class="lvar">  sourceArr</span> = <span>{{ '[' }} </span></li>
+                  <li><span class="lsyb">    {{ '{' }}id: <span class="lstr">'1'</span>, name: <span class="lstr">'备选项'</span>{{ '}' }},</span></li>
+                  <li><span class="lsyb">    {{ '{' }}id: <span class="lstr">'2'</span>, name: <span class="lstr">'备选项'</span>{{ '}' }},</span></li>
+                  <li><span class="lsyb">    {{ '{' }}id: <span class="lstr">'3'</span>, name: <span class="lstr">'备选项'</span>{{ '}' }}</span></li>
+                  <li><span>  {{ ']' }}</span></li>
+                  <li></li>
+                  <li><span class="lfuc">  selectChange</span>( <span class="lvar">model</span>: <span class="lsyb">any</span> )<span> {{'{'}} </span></li>
+                  <li><span class="lsyb">    console.log</span>(<span class="lvar">model.value</span>)</li>
+                  <li><span>  {{'}'}} </span></li>
+                  <li><span>{{'}'}} </span></li>
+                </ol>
+              </pre>
+          </tab>
+        </tabset>
+      </div>
+    </tab>
+  </tabset>
+</div>
