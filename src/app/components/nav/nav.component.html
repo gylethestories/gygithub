@@ -1,5 +1,5 @@
 <nav class="nav-list">
-    <!-- <ul class="nav-ul">
+  <!-- <ul class="nav-ul">
         <li class="manulife-icon">Manulife Design</li>
         <li *ngFor="let menu of menus" [ngClass]="{'active-menu': activeLink === menu.path}"
             (click)="onNavigate(menu.path)">{{menu.name}}
@@ -8,14 +8,29 @@
             </span>
         </li>
     </ul> -->
-    <div class="menu-wrapper">
-        <div class="manulife-icon">Manulife Design</div>
-        <div *ngFor="let menu of menus; index as i" [ngClass]="{'active-menu': menuStatus[i]}" (click)="switchMenu(i)">
-            {{menu.name}}
-            <ul *ngFor="let m of menu.subMenu" class="nav-ul"
-                [ngClass]="{'active-nav-ul': menuStatus[i], 'deactive-nav-ul': !menuStatus[i]}">
-                <li [ngClass]="{'active-li':activeLink === m.path}" (click)="onNavigate(m.path)">{{m.name}}</li>
-            </ul>
-        </div>
+  <div class="menu-wrapper">
+    <div class="manulife-icon">Design</div>
+    <div
+      *ngFor="let menu of menus; index as i"
+      [ngClass]="{ 'active-menu': menuStatus[i] }"
+      (click)="switchMenu(i)"
+    >
+      {{ menu.name }}
+      <ul
+        *ngFor="let m of menu.subMenu"
+        class="nav-ul"
+        [ngClass]="{
+          'active-nav-ul': menuStatus[i],
+          'deactive-nav-ul': !menuStatus[i]
+        }"
+      >
+        <li
+          [ngClass]="{ 'active-li': activeLink === m.path }"
+          (click)="onNavigate(m.path)"
+        >
+          {{ m.name }}
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>

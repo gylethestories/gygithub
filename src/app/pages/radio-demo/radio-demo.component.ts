@@ -17,12 +17,14 @@ export class RadioDemoComponent implements OnInit {
   selectedSource: number = 1;
 
   apiTable = '';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('/assets/radio/radio-api.md', { responseType: 'text' }).subscribe(res => {
-      this.apiTable = new showndown.Converter({ tables: true }).makeHtml(res);
-    });
+    this.http
+      .get('/assets/radio/radio-api.md', { responseType: 'text' })
+      .subscribe(res => {
+        this.apiTable = new showndown.Converter({ tables: true }).makeHtml(res);
+      });
   }
 
   selectChange(model: any) {

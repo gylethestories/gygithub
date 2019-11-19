@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+import showndown from 'showdown';
+
 @Component({
   selector: 'app-multi-select-demo',
   templateUrl: './multi-select-demo.component.html',
-  styleUrls: ['./multi-select-demo.component.css']
+  styleUrls: ['./multi-select-demo.component.scss']
 })
 export class MultiSelectDemoComponent implements OnInit {
   options = [
@@ -11,22 +14,14 @@ export class MultiSelectDemoComponent implements OnInit {
     { label: 'China', value: 'b' },
     { label: 'hongkong', value: 'c' }
   ];
-
-  headers = ['参数', '类型', '说明', '可选值', '默认值'];
-  contents = [
-    ['options', 'object', '自定义配置', '--', '--'],
-    [
-      'options.label',
-      'string',
-      '显示的值',
-      '--',
-      '--'
-    ],
-    ['options.value', 'string', 'key值', '--', '--'],
-  ];
-  constructor() { }
+  apiTable = '';
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.http
+      .get('/assets/multi-select/multi-select-api.md', { responseType: 'text' })
+      .subscribe(res => {
+        this.apiTable = new showndown.Converter({ tables: true }).makeHtml(res);
+      });
   }
-
 }

@@ -12,26 +12,26 @@ export class NavComponent implements OnInit {
   menus = NAV_MENU;
   @Input() isLoggedIn: boolean;
 
-  menuStatus: Array<boolean>
+  menuStatus: Array<boolean>;
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.activeLink = this.menus[0].subMenu[0].path;
     this.menuStatus = Array.from({ length: this.menus.length }, () => false);
-    this.menuStatus[0] = true
+    this.menuStatus[0] = true;
   }
 
   onNavigate(link) {
     this.router.navigateByUrl(link, { skipLocationChange: false });
-    this.activeLink = link
+    this.activeLink = link;
   }
 
   switchMenu(i: any) {
     if (!this.menuStatus[i]) {
       this.menuStatus = Array.from({ length: this.menus.length }, () => false);
+      console.log({ length: this.menus.length });
     }
-    this.menuStatus[i] = true
+    this.menuStatus[i] = true;
   }
 }
